@@ -15,7 +15,7 @@ public class CalendarExample {
 //       2. Por ser uma classe abstrata, não é possível criar uma instancia da mesma. Nisso é possivel criar um
 //          método que pode construir uma instancia de calendário formatado como queremos. (getCalendar);
 
-//        3. Exemplos de  métodos para a Classe Calendar são:
+//        3. Exemplos de métodos para a Classe Calendar são:
             /*3.1.*/
                     Calendar example1 = Calendar.getInstance(); // getInstance é static;
                     System.out.println("3.1: " + example1);
@@ -47,7 +47,6 @@ public class CalendarExample {
 
 
 
-
     }
 
 //        5. Construir um Calendario:
@@ -61,6 +60,8 @@ public class CalendarExample {
         return date;
     }
     Calendar now = getCalendar(17,04,2022);
+
+
 
 
 

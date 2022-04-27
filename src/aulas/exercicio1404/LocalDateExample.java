@@ -13,7 +13,8 @@ public class LocalDateExample {
 //           É possível acessar outras informações como, dia da semana, semana do ano...
 
 //        2. LocalDate now = new LocalDate(2022,04,17); (É um construtor privado)
-            LocalDate now = LocalDate.of(2022,4,17); //Vai funcionar da mesma maneira que o construtor privado.
+            LocalDate now = LocalDate.of(2022,4,17);
+            //Vai funcionar da mesma maneira que o construtor privado.
             System.out.println("2: " + now);
         /*3.*/
             /*3.1.*/ //Método que adiciona o número de dias informado no parâmetro. Retorna uma cópia do Date com o número adicionado.
