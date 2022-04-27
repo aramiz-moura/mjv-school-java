@@ -9,9 +9,13 @@ public class GeradorMensagem {
 		StringBuilder sb = new StringBuilder();
 		Cadastro cliente = contrato.getCliente();
 		String cpfFormatado = FormatadorUtil.formatarCpf(cliente.getCpf());
+		String dataFormatada = FormatadorUtil.formatarData(contrato.getDataHora());
 		//sb.append("Senhor(a) " + cliente.getNome() +" cpf de número " + cpfFormatado );
 		sb.append(String.format("Senhor(a) %s cpf de número %s, ",cliente.getNome(), cpfFormatado ));
-		sb.append(String.format("Informamos que conforme contrato com protocolo de número %d", contrato.getNumeroProtocolo()));
+		sb.append(String.format("Informamos que conforme contrato com protocolo de número %d ", contrato.getNumeroProtocolo()));
+		sb.append(dataFormatada);
+
+
 		System.out.println(sb.toString());
 	}
 }
