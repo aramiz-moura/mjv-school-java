@@ -11,8 +11,21 @@ public class FormatadorUtil {
 		String cpfFormatador=String.format("%s.%s.%s-%s", part1, part2, part3, part4);
 		return cpfFormatador;
 	}
+
+
 	public static String removerAcentos(String palavra) {
 		return Normalizer.normalize(palavra, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+	}
+
+	public static String formataNome(String nome) {
+		String stringFormatada;
+		if(nome.length() >= 30) {
+			stringFormatada = nome.substring(0, 30);
+		} else {
+			String completer = " ".repeat(30 - nome.length());
+			stringFormatada = completer + nome;
+		}
+		return stringFormatada.toUpperCase();
 	}
 	
 }

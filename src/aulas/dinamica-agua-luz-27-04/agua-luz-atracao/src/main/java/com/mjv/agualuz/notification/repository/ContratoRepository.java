@@ -27,6 +27,7 @@ public class ContratoRepository {
 		cliente.setCpf("23476598727");
 		cliente.setNome("Gleyson Sampaio");
 		cliente.setRg("87897");
+		cliente.setCelular("(11) 99768 - 1515");
 		cliente.setPais(Pais.BRASIL);
 		
 		Endereco endereco = new Endereco();

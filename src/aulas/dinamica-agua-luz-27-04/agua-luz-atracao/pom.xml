@@ -3,7 +3,19 @@
   <groupId>com.mjv</groupId>
   <artifactId>agua-luz-atracao</artifactId>
   <version>1.0</version>
-  <name>Sistema para Atração de Contratos</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>Sistema para Atração de Contratos</name>
   <properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>

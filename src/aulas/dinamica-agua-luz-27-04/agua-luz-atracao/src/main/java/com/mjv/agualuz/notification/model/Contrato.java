@@ -8,6 +8,16 @@ public class Contrato {
 	private Double valor;
 	private LocalDateTime dataHora;
 	private Cadastro cliente;
+	private TipoNotificacao tipoNotificacao;
+
+	public TipoNotificacao getTipoNotificacao() {
+		return tipoNotificacao;
+	}
+
+	public void setTipoNotificacao(TipoNotificacao tipoNotificacao) {
+		this.tipoNotificacao = tipoNotificacao;
+	}
+
 	public Long getNumeroProtocolo() {
 		return numeroProtocolo;
 	}

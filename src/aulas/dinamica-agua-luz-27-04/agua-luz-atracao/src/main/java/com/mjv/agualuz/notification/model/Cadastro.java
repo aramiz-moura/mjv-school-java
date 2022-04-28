@@ -4,8 +4,10 @@ public class Cadastro {
 	private String nome;
 	private String cpf;
 	private String rg;
+	private String celular;
 	private Endereco endereco;
 	private Pais pais;
+
 	public String getRg() {
 		return rg;
 	}
@@ -36,5 +38,12 @@ public class Cadastro {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
 }
