@@ -14,7 +14,6 @@ public class SistemaAguaLuzNotification {
 		contrato.setNumeroProtocolo(2022025687L);
 		contrato.setServico("Água");
 		contrato.setValor(127.33);
-		
 		Cadastro cliente = new Cadastro();
 		contrato.setCliente(cliente);
 		
