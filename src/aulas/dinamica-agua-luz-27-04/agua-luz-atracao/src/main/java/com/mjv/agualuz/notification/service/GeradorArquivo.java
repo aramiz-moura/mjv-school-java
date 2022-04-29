@@ -22,19 +22,19 @@ public class GeradorArquivo {
 			sb.append(cad.getRg() + ";");
 			sb.append(cad.getNome() + ";");
 			sb.append(cad.getCelular() + ";");
-			sb.append(cad.getEndereco().getLogradouro() + ";");
+			sb.append(FormatadorUtil.removerAcentos(cad.getEndereco().getLogradouro()) + ";");
 			sb.append(cad.getEndereco().getNumero() + ";");
 			sb.append(cad.getEndereco().getComplemento() + ";");
 			sb.append(cad.getEndereco().getBairro() + ";");
-			sb.append(cad.getEndereco().getCidade() + ";");
-			sb.append(cad.getEndereco().getCidade() + ";");
+			sb.append(FormatadorUtil.removerAcentos(cad.getEndereco().getCidade() + ";"));
+			sb.append(cad.getEndereco().getEstado() + ";");
 			sb.append(cad.getEndereco().getCep() + ";");
 			sb.append(cad.getPais() + ";");
 			sb.append(c.getNumeroProtocolo() + ";");
 			sb.append(c.getDataHora() + ";");
 			sb.append(c.getServico() + ";");
 			sb.append(c.getValor()+ ";");
-			sb.append(c.getTipoNotificacao() + ";");
+			sb.append(c.getTipoNotificacao());
 		}
 		System.out.println(sb.toString());
 		
@@ -47,9 +47,24 @@ public class GeradorArquivo {
 		
 		for(Contrato c : contratos) {
 			Cadastro cad = c.getCliente();
-			sb.append(FormatadorUtil.removerAcentos(cad.getCpf()));//remover os caracteres especiais
-			sb.append(cad.getRg());// incluir espaços em branco ate 10 e alinhar a equerda
-			sb.append(FormatadorUtil.formataNome(cad.getNome()));//cortar o nome para no máximo 30c e colocar maiusculo.
+			sb.append(cad.getCpf().replaceAll("\\D",""));//remover os caracteres especiais
+			sb.append(FormatadorUtil.formataString(cad.getRg(),10));// incluir espaços em branco ate 10 e alinhar a equerda
+			sb.append(FormatadorUtil.formataString(cad.getNome(),30).toUpperCase());//cortar o nome para no máximo 30c e colocar maiusculo.
+			sb.append(cad.getCelular().replaceAll("\\D",""));
+			sb.append(FormatadorUtil.removerAcentos(FormatadorUtil.formataString(cad.getEndereco().getLogradouro(),20).toUpperCase()));
+			sb.append(FormatadorUtil.completaNumero(cad.getEndereco().getNumero(),6));
+			sb.append(FormatadorUtil.formataString(cad.getEndereco().getComplemento(),10).toUpperCase());
+			sb.append(FormatadorUtil.formataString(cad.getEndereco().getBairro(),15).toUpperCase());
+			sb.append(FormatadorUtil.formataString(cad.getEndereco().getCidade(),30).toUpperCase());
+			sb.append(cad.getEndereco().getEstado());
+			sb.append(cad.getEndereco().getCep().replaceAll("\\D",""));
+			sb.append(cad.getPais().getSigla());
+			sb.append(FormatadorUtil.completaNumero(String.valueOf(c.getNumeroProtocolo()),10));
+			sb.append(FormatadorUtil.formatarData(c.getDataHora()));
+			sb.append(c.getServico().getSigla());
+			String valor = c.getValor().toString().replaceAll("\\D","");
+			sb.append(FormatadorUtil.completaNumero(valor,8));
+			sb.append(c.getTipoNotificacao().getSigla());
 		}
 		System.out.println(sb.toString());
 		escrever(sb.toString(), "agua-luz-contratos.txt");

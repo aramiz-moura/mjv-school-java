@@ -9,7 +9,7 @@ public enum TipoNotificacao {
     }
     private String sigla;
 
-    private String getSigla(){
+    public String getSigla(){
         return this.sigla;
     }
 }

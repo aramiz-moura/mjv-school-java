@@ -4,21 +4,33 @@ import java.time.LocalDateTime;
 
 public class Contrato {
 	private Long numeroProtocolo;
-	private String servico;
+	private Servico servico;
 	private Double valor;
 	private LocalDateTime dataHora;
 	private Cadastro cliente;
+	private TipoNotificacao tipoNotificacao;
+
+	public Servico getServico() {
+		return servico;
+	}
+
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
+
+	public TipoNotificacao getTipoNotificacao() {
+		return tipoNotificacao;
+	}
+
+	public void setTipoNotificacao(TipoNotificacao tipoNotificacao) {
+		this.tipoNotificacao = tipoNotificacao;
+	}
+
 	public Long getNumeroProtocolo() {
 		return numeroProtocolo;
 	}
 	public void setNumeroProtocolo(Long numeroProtocolo) {
 		this.numeroProtocolo = numeroProtocolo;
-	}
-	public String getServico() {
-		return servico;
-	}
-	public void setServico(String servico) {
-		this.servico = servico;
 	}
 	public Double getValor() {
 		return valor;
@@ -38,5 +50,16 @@ public class Contrato {
 	public void setCliente(Cadastro cliente) {
 		this.cliente = cliente;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Contrato{" +
+				"numeroProtocolo=" + numeroProtocolo +
+				", servico=" + servico +
+				", valor=" + valor +
+				", dataHora=" + dataHora +
+				", cliente=" + cliente +
+				", tipoNotificacao=" + tipoNotificacao +
+				'}';
+	}
 }
